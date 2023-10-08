@@ -1,4 +1,4 @@
-# Token Staking Contract
+# Token Staking Contract with an annualized PR of 14%
 
 ## Requirements:
 
@@ -23,7 +23,7 @@
 
 ##### Feature Breakdown
 
-- Struct StakerData{
+- struct StakerData{
 
 - address staker;
 - uint256 amountStaked;
@@ -33,15 +33,18 @@
   }
 
 - Storage/ state variables
+- mapping(address =)
 
 - Events
 
--StakeEth() external payable{
+- stakeEth() external payable{
 
 - Preconditions:
   - check that msg.value is not zero()
   - convert ETHAmount to WETHAmount
-  - Mint receipt tokens,
+  - update storage struct
+  - Mint receipt tokens
+  - emit event
 
 }
 
@@ -51,3 +54,5 @@
     - check that balance of receiptToken, IER20(rMarsIfeanyi.sol) is greater than msg.value;
 
 }
+
+https://github.com/MarsIfeanyi/StakingRewards-Smart-Contract
