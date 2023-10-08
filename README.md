@@ -58,5 +58,3 @@
     - check that balance of receiptToken, IER20(rMarsIfeanyi.sol) is greater than msg.value;
 
 }
-
-https://github.com/MarsIfeanyi/StakingRewards-Smart-Contract
