@@ -15,11 +15,14 @@
 - receiptToken = MarsIfeanyi.sol
 
 - constructor()
-- StakeEth()
+- stakeEth()
 - autoCompound()
 - withdrawStake()
 - calculateRewards()
 - mintReceiptTokens()
+- swapRewardsToWeth()
+- withdrawStakedRewards()
+- withdrawStakedTokensAndRewards()
 
 ##### Feature Breakdown
 
@@ -43,6 +46,7 @@
   - check that msg.value is not zero()
   - convert ETHAmount to WETHAmount
   - update storage struct
+  - calculate 1% autoCompounding
   - Mint receipt tokens
   - emit event
 
