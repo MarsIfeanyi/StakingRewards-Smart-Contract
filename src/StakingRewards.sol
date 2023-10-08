@@ -32,6 +32,7 @@ contract StakingRewrds {
 
     // Custom Errors
     error ZeroAmountNotAllowed(string);
+    error MustBeGreaterThanMinimumAmountETH(string);
     error MinimumStakingTimeHasNotElapsed();
     error CannotWithdrawZeroAmount();
     error HeyInsufficientFunds();
@@ -65,10 +66,11 @@ contract StakingRewrds {
     }
 
     function stakeETH() external payable {
-        if (msg.value == 0 && msg.value <= MINIMUM_AMOUNTETH)
-            revert ZeroAmountNotAllowed(
-                "You can't Stake Zero ETH and must be greater than MINIMUM_AMOUNTETH"
-            );
+        if (msg.value == 0)
+            revert ZeroAmountNotAllowed("You can't Stake Zero ETH");
+
+        if (msg.value <= MINIMUM_AMOUNTETH)
+            revert MustBeGreaterThanMinimumAmountETH("MinimumETH: 0.01 ether");
 
         uint256 amountETH = msg.value;
         // Convert ETH to WETH
